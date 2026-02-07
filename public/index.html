@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selenium converted to Playwright</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="monitor">
+      <header class="scanline">
+        <h1><span class="blink">_</span>SELENIUM_TO_PLAYWRIGHT_CONVERTER</h1>
+        <div class="status-bar">
+          <span id="ollama-status" class="status-indicator pending"
+            >CONNECTING_OLLAMA...</span
+          >
+        </div>
+      </header>
+
+      <main class="grid-container">
+        <!-- INPUT PANEL -->
+        <section class="panel input-panel">
+          <div class="panel-header">
+            <h2>SOURCE_CODE (JAVA)</h2>
+            <select id="model-select">
+              <option value="llama3.2">llama3.2</option>
+              <option value="llama3:latest">llama3</option>
+              <option value="mistral">mistral</option>
+            </select>
+          </div>
+          <textarea
+            id="java-input"
+            placeholder="// Paste Selenium Java Driver code here...
+driver.findElement(By.id('login')).click();"
+            spellcheck="false"
+          ></textarea>
+        </section>
+
+        <!-- CONTROLS -->
+        <div class="controls">
+          <button id="convert-btn" class="cyber-btn">
+            EXECUTE_CONVERSION()
+          </button>
+        </div>
+
+        <!-- OUTPUT PANEL -->
+        <section class="panel output-panel">
+          <div class="panel-header">
+            <h2>TARGET_PAYLOAD (TYPESCRIPT)</h2>
+            <button id="copy-btn" class="icon-btn" title="Copy to Clipboard">
+              📋
+            </button>
+          </div>
+          <textarea
+            id="ts-output"
+            readonly
+            placeholder="// Playwright transformation awaiting..."
+            spellcheck="false"
+          ></textarea>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
